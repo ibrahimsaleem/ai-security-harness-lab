@@ -1,0 +1,1 @@
+$ cd /Users/ibrahim/Developer/ai-security-harness-lab/repos/pentagi && docker compose --env-file .env.example -f docker-compose.yml config --quiet

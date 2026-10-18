@@ -1,0 +1,20 @@
+$ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/bin/inspect eval configs/inspect_mock_task.py --model mockllm/model --log-dir /Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/inspect --no-ansi
+[10/13/26 22:21:46] WARNING  Control server failed to start (eval server.py:1862
+                             will run without control surface):                 
+                             AF_UNIX path too long                              
+╭──────────────────────────────────────────────────────────────────────────────╮
+│lab_smoke (1 sample): mockllm/model                                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+dataset: (samples)                                                              
+                                                                                
+total time:                   0:00:01                                           
+mockllm/model                 35 tokens [I: 2, O: 33]                           
+                                                                                
+includes                                                                        
+accuracy  1.000                                                                 
+stderr    0.000                                                                 
+                                                                                
+Log:                                                                            
+artifacts/out/inspect/2026-10-14T03-21-46-00-00_lab-smoke_gmZBc3EBYY6j8MA5GH3X3J
+.eval                                                                           
+                                                                                

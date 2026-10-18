@@ -1,0 +1,2 @@
+$ $E/garak/bin/garak --config configs/garak-ollama.yaml --target_type ollama --target_name llama3.1:8b --probes promptinject.HijackHateHumans,encoding.InjectBase64 --report_prefix lab-ollama
+zsh:1: no such file or directory: /garak/bin/garak

@@ -1,0 +1,47 @@
+$ /Users/ibrahim/Developer/ai-security-harness-lab/environments/vvah/bin/vvaharness setup
+
+  ⟐  vvaharness 1.5.0 — setup
+
+  ✓ Python                         3.11.16 (≥ 3.11)
+  ✓ git                            /opt/homebrew/bin/git
+  ✓ pip3                           /Users/ibrahim/.pyenv/shims/pip3
+  ⚠ agent: Claude Code             claude ✓ (via:cli) — installed; login not detected (a macOS Keychain-only `claude` login is not visible here — try `claude` once to confirm)
+  ⚠ agent: OpenAI Codex            not installed
+  ⚠ agent: Gemini CLI              not installed
+  ⚠ agent: Cursor Agent            not installed
+  ⚠ agent: GitHub Copilot CLI      not installed
+  ⚠ cred: ANTHROPIC_SDK_API_KEY    unset
+  ⚠ cred: ANTHROPIC_API_KEY        unset
+  ⚠ cred: ANTHROPIC_AUTH_TOKEN     unset
+  ⚠ cred: CLAUDE_CODE_OAUTH_TOKEN  unset
+  ⚠ cred: OPENAI_API_KEY           unset
+  ⚠ cred: GEMINI_API_KEY           unset
+  ⚠ cred: GITHUB_TOKEN             unset
+  ✓ LangSmith tracing              disabled (no LANGSMITH_TRACING* / LANGCHAIN_TRACING* gate variable is "true")
+  ✓ dep: pydantic                  importable
+  ✓ dep: PyYAML                    importable
+  ✓ dep: anthropic                 importable
+  ✓ dep: tree-sitter               importable
+  ✓ dep: tree-sitter-language-pack importable
+  ✓ dep: openai                    importable
+  ✓ dep: context-graph-sdk         bundled (/Users/ibrahim/Developer/ai-security-harness-lab/environments/vvah/lib/python3.11/site-packages/context_graph_sdk)
+  ✓ anthropic version              1.13.0 (supported: <2.0)
+  ⚠ TLS / CA cert                  could not verify api.anthropic.com:443 (PermissionError) — skipping CA determination; the live probe will confirm
+  ✓ remediation inputs             bundled policy and playbook available
+  ✓ config                         default.yaml loads — create ./config.yaml for local defaults (config.yml is not auto-loaded)
+  ✓ .env                           not found (optional; use setup --write-env)
+  ✓ config overlay                 config.local.yaml not found (optional)
+  ✓ active backends                deepagents
+  ✗ via:deepagents claude-opus-4-7 ANTHROPIC_API_KEY or ANTHROPIC_AUTH_TOKEN not set (role(s): autoexclude, chain, decompose, dedup, deepdive, exploit_verification.attacker, threatmodel, verify)
+  ✗ via:deepagents claude-opus-4-8 ANTHROPIC_API_KEY or ANTHROPIC_AUTH_TOKEN not set (role(s): exploit_verification.judge, remediate)
+  ⚠ via:deepagents claude-opus-5   ANTHROPIC_API_KEY or ANTHROPIC_AUTH_TOKEN not set (role(s): validate)
+  ✗ via:deepagents claude-sonnet-4-6 ANTHROPIC_API_KEY or ANTHROPIC_AUTH_TOKEN not set (role(s): exploit_verification.classify, exploit_verification.mapper, preprocess)
+  ✓ via:deepagents endpoint        public api.anthropic.com (default)
+  ────────────────────────────────────────────────────────────
+  18 ok · 14 warning(s) · 3 blocking issue(s)
+
+  AI agent driving this? Run `vvaharness setup --install-agents` to drop the right instructions for your agent (Claude/Copilot/Gemini) so it runs the tool instead of editing it.
+  (Operating manual: AGENTS.md · capabilities: docs/SKILLS.md)
+
+  Not ready: fix the 3 blocking item(s) above, then `vvaharness scan`.
+

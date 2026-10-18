@@ -1,0 +1,2 @@
+$ /Users/ibrahim/Developer/ai-security-harness-lab/environments/crewai/bin/python configs/crewai_offline.py
+crewai offline OK: crew constructed, process = Process.sequential

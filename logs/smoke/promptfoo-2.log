@@ -1,0 +1,47 @@
+$ promptfoo --help
+Usage: promptfoo [options] [command]
+
+Options:
+  -V, --version                    output the version number
+  -v, --verbose                    Show debug logs (default: false)
+  --env-file, --env-path <path>    Path(s) to .env file(s). Repeat the flag or
+                                   use comma-separated values for multiple
+                                   files. (default: [])
+  -h, --help                       display help for command
+
+Commands:
+  eval [options]                   Evaluate prompts
+  init [options] [directory]       Set up a new promptfoo project with prompts,
+                                   providers, and test cases
+  view [options] [directory]       Start browser UI
+  mcp [options]                    Start an MCP server for external tool
+                                   integrations
+  redteam [options]                Red team LLM applications
+  share [options] [id]             Create a shareable URL of an eval or a model
+                                   audit (defaults to most recent)
+                                   
+                                   
+  auth [options]                   Manage authentication
+  cache [options]                  Manage cache
+  code-scans [options]             Scan code for LLM security vulnerabilities
+  config [options]                 Edit configuration settings
+  debug [options]                  Display debug information for troubleshooting
+  delete [options] <id>            Delete various resources
+  export [options]                 Export eval records or logs
+  generate [options]               Generate synthetic data
+  feedback [options] [message]     Send feedback to the promptfoo developers
+  import [options] <file>          Import a Promptfoo eval JSON export or an
+                                   OpenAI Evals JSONL export
+  list [options]                   List various resources
+  logs [options] [file]            View promptfoo log files
+  scan-model [options] [paths...]  Scan model files for security and quality
+                                   issues
+  optimize [options]               Optimize one prompt against one configured
+                                   provider
+  retry [options] <evalId>         Retry all ERROR results from a given
+                                   evaluation
+  validate [options]               Validate configuration files and test
+                                   providers
+  show [options] [id]              Show details of a specific resource (defaults
+                                   to most recent)
+  help [command]                   display help for command

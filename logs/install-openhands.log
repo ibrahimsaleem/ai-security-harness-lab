@@ -1,0 +1,9 @@
+
+added 601 packages in 1m
+npm warn install-scripts 4 packages have install scripts not yet covered by allowScripts:
+npm warn install-scripts   @openhands/agent-canvas@1.27.1 (postinstall: node -e "if (process.env.npm_config_global === 'true') { console.log('\n\x1b[32m\x1b[1m\u2713 @openhands/agent-canvas installed!\x1b[0m\n\nTo start Agent Canvas, run:\n\n  \x1b[36m\x1b[1magent-canvas\x1b[0m\n\nThis launches the full stack at \x1b[36mhttp://localhost:8000\x1b[0m.\n\nDocs: https://docs.openhands.dev/openhands/usage/agent-canvas/setup\n') }")
+npm warn install-scripts   @heroui/shared-utils@2.1.12 (postinstall: node -e "try{require('./scripts/postinstall.js')}catch(e){}")
+npm warn install-scripts   @openrouter/sdk@1.4.25 (postinstall: node scripts/check-types.js || true)
+npm warn install-scripts   core-js@3.50.0 (postinstall: node -e "try{require('./postinstall')}catch(e){}")
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.

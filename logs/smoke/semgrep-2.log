@@ -1,0 +1,21 @@
+$ semgrep scan --metrics off --disable-version-check --config configs/lab-rules.yml --json -o /Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/semgrep.json --sarif-output=/Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/semgrep.sarif /Users/ibrahim/Developer/ai-security-harness-lab/fixtures/sample-vulnerable-app
+               
+               
+┌─────────────┐
+│ Scan Status │
+└─────────────┘
+  Scanning 7 files tracked by git with 9 Code rules:
+  Scanning 6 files with 9 python rules.
+                
+                
+┌──────────────┐
+│ Scan Summary │
+└──────────────┘
+✅ Scan completed successfully.
+ • Findings: 12 (12 blocking)
+ • Rules run: 9
+ • Targets scanned: 6
+ • Parsed lines: ~100.0%
+ • Scan was limited to files tracked by git
+ • For a detailed list of skipped files and lines, run semgrep with the --verbose flag
+Ran 9 rules on 6 files: 12 findings.

@@ -1,0 +1,8 @@
+# Recreated by the setup steps in README.md
+repos/
+environments/
+artifacts/home/
+# Noise
+.DS_Store
+vulnhuntr.log
+logs/ollama-pull.log

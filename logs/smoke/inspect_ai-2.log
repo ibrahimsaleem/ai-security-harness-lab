@@ -1,0 +1,22 @@
+$ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/bin/inspect --help
+Usage: inspect [OPTIONS] [COMMAND] [ARGS]...
+
+Options:
+  --version  Print the Inspect version.
+  --help     Show this message and exit.
+
+Commands:
+  acp         Connect to a running Inspect eval over the Agent Client...
+  cache       Manage the inspect model output cache.
+  ctl         Read and direct running evals and manage kept-alive processes.
+  download    Inspect-managed binary downloads.
+  eval        Evaluate tasks.
+  eval-retry  Retry failed evaluation(s).
+  eval-set    Evaluate a set of tasks with retries.
+  info        Read configuration and log info.
+  list        List tasks on the filesystem.
+  log         Query, read, and convert logs.
+  sandbox     Manage Sandbox Environments.
+  score       Score a previous evaluation run.
+  trace       List and read execution traces.
+  view        Inspect log viewer.

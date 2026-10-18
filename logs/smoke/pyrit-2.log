@@ -1,0 +1,89 @@
+$ /Users/ibrahim/Developer/ai-security-harness-lab/environments/pyrit/bin/pyrit_scan --help
+usage: pyrit_scan [-h] [--server-url SERVER_URL] [--config-file CONFIG_FILE]
+                  [--auth-mode {auto,azure_cli,device_code,none}]
+                  [--log-level LOG_LEVEL]
+                  <command> ...
+
+PyRIT Scanner - Run AI security scenarios from the command line.
+
+Requires a running PyRIT backend server. Use 'start-server' to launch one,
+or connect to an existing server with --server-url.
+
+Global options (--server-url, --config-file, --log-level) are listed below and
+work before or after the verb. Backend commands (run, list-*, add-initializer,
+scenario-results, scenario-history) also accept --start-server, --startup-timeout,
+and --request-timeout; run 'pyrit_scan <command> --help' to see them.
+
+Examples:
+  # Start the backend server
+  pyrit_scan start-server
+
+  # List scenarios, initializers, targets, or converters
+  pyrit_scan list-scenarios
+  pyrit_scan list-initializers
+  pyrit_scan list-targets
+  pyrit_scan list-converters
+
+  # Run single-turn cyber attacks against a target
+  pyrit_scan run airt.cyber --target openai_chat --techniques single_turn
+
+  # Run rapid response with specific datasets and concurrency
+  pyrit_scan run airt.rapid_response --target openai_chat
+    --techniques role_play_movie_script --dataset-names airt_hate
+    --max-dataset-size 5 --max-concurrency 4
+
+  # Attach registered converters to a technique (repeatable, applied in order)
+  pyrit_scan run airt.rapid_response --target openai_chat
+    --techniques role_play_movie_script:converter.translation_spanish:converter.leetspeak
+
+  # List recent runs, then inspect one (overview by default; --view attacks for per-attack rows,
+  # --view conversations/full for message transcripts)
+  pyrit_scan scenario-history 20
+  pyrit_scan scenario-results 605d715b-7c07-4bde-a8f9-22fea0b50c4f --view attacks
+  pyrit_scan scenario-results 605d715b-7c07-4bde-a8f9-22fea0b50c4f --view conversations --limit 3
+
+  # Register a custom initializer from a Python script
+  pyrit_scan add-initializer ./my_custom_init.py
+
+  # Connect to a remote server
+  pyrit_scan list-scenarios --server-url http://remote:8000
+
+  # Stop the server
+  pyrit_scan stop-server
+
+options:
+  -h, --help            show this help message and exit
+
+global options:
+  --server-url SERVER_URL
+                        URL of the PyRIT backend server (default:
+                        http://localhost:8000)
+  --config-file CONFIG_FILE
+                        Path to a YAML config file. For commands that talk to
+                        a running server this only selects which backend to
+                        connect to (server.url). Its database, initializers,
+                        initialization-scripts, and env sections apply only
+                        when a backend is launched (start-server or --start-
+                        server); they are not re-run against an already-
+                        running server.
+  --auth-mode {auto,azure_cli,device_code,none}
+                        Backend authentication mode (default: server.auth_mode
+                        or auto). Auto uses exact-scope device-code
+                        authentication in an interactive terminal.
+  --log-level LOG_LEVEL
+                        Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+                        (default: WARNING)
+
+commands:
+  <command>
+    run                 Run a scenario against a target
+    list-scenarios      List all available scenarios
+    list-initializers   List all available initializers
+    list-targets        List all available targets
+    list-converters     List all registered converter instances
+    list-datasets       List all available datasets
+    add-initializer     Register initializer(s) from Python script file(s)
+    scenario-results    Inspect the results of a completed scenario run
+    scenario-history    List recent scenario runs
+    start-server        Start a local backend server
+    stop-server         Stop the backend server

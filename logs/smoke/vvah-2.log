@@ -1,0 +1,37 @@
+$ /Users/ibrahim/Developer/ai-security-harness-lab/environments/vvah/bin/vvaharness --help
+vvaharness 1.5.0 — agentic SAST pipeline
+
+Usage: vvaharness <command> [options]
+
+Commands:
+  command    what it does                                                       
+  setup      Guided readiness check: AI agents, keys, deps, gateway, config     
+  doctor     Check credentials + live backend connectivity (read-only)          
+  estimate   Print a rough scope/cost preview for a repo (no API spend)         
+  gc         Delete old runs: checkpoints and code-graph workspaces (--keep-runs
+             / --max-age-days / --dry-run)                                      
+  scan       Scan a repo (or --repo-file batch) for vulnerabilities             
+  remediate  Walk findings from a prior scan and remediate them                 
+  validate   Run the s11 agentic validation agent on applied remediations       
+  ev-replay  Re-check exploit-verified findings against a REDEPLOYED target     
+  --version  Print the installed version                                        
+
+Stages
+  scan: the packaged default skips S10/S11; --remediate enables S10 only and can edit source.
+  scan: in-scan S11 needs step_validate.enabled: true, and --stop-after s9 skips both.
+  doctor --cache-probe: opt-in live prompt-cache diagnostic. Spends real tokens (~65-70k/model, printed first); never runs during `scan`.
+  remediate: --interactive/-i to pick from a menu; --mode fix|report-only; --top N overrides step_remediate.top_n_findings (--top all remediates every one); --verbose/-v.
+
+Config
+  ./config.yaml when present, otherwise the packaged default.
+  Customise: cp vvaharness/config/profiles/sdk.yaml config.yaml   (see also full.yaml)
+  sdk/full profiles enable S10/S11; default/taint disable them. A local overlay can override these flags.
+  Standalone remediate and validate remain available when the scan flags are false.
+
+Quick start
+  vvaharness setup
+  vvaharness estimate --repo /path/to/target
+  vvaharness scan --repo /path/to/target --application-id 12345
+  vvaharness scan --repo /path/to/target --stop-after s9   # skip S10/S11 on any profile
+
+Run `vvaharness <command> --help` for a command's own options.

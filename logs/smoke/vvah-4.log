@@ -1,0 +1,12 @@
+$ /Users/ibrahim/Developer/ai-security-harness-lab/environments/vvah/bin/vvaharness estimate --repo /Users/ibrahim/Developer/ai-security-harness-lab/fixtures/sample-vulnerable-app
+scope estimate for /Users/ibrahim/Developer/ai-security-harness-lab/fixtures/sample-vulnerable-app
+  in-scope files   : 7
+  bytes            : 2,030
+  ~source tokens   : 507 (bytes/4, not pipeline usage)
+  S1-S9 input budget: 252,535-1,010,140 tokens (heuristic)
+  assumes 250k-1M fixed prompt/tool overhead plus 5-20x source tokens.
+  Not a measured forecast or spend cap; agent turns, findings, retries
+  and cache billing can put actual usage outside this range. S10/S11
+  and exploit verification are extra. No model calls were made.
+  Scope is before config dedup and optional auto-exclusions; use
+  --stop-after s3 for the final inventory. Cost depends on model pricing.

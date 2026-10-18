@@ -1,0 +1,2 @@
+$ /Users/ibrahim/Developer/ai-security-harness-lab/environments/pyrit/bin/python -c 'import asyncio; from pyrit.converter import Base64Converter as B; r=asyncio.run(B().convert_async(prompt="lab")); assert r.output_text=="bGFi", r; print("converter OK", r.output_text)'
+converter OK bGFi

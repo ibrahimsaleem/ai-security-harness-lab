@@ -1,0 +1,1 @@
+$ cd /Users/ibrahim/Developer/ai-security-harness-lab/repos/shannon && docker compose -f docker-compose.yml config --quiet

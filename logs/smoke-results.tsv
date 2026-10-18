@@ -1,0 +1,43 @@
+project	level	command	start_utc	secs	exit	log
+vvah	1	/Users/ibrahim/Developer/ai-security-harness-lab/environments/vvah/bin/vvaharness --version	2026-10-14T03:20:24Z	0	0	logs/smoke/vvah-1.log
+vvah	1	/Users/ibrahim/Developer/ai-security-harness-lab/environments/vvah/bin/vvaharness --help	2026-10-14T03:20:24Z	0	0	logs/smoke/vvah-2.log
+vvah	2	/Users/ibrahim/Developer/ai-security-harness-lab/environments/vvah/bin/vvaharness setup	2026-10-14T03:20:24Z	1	1	logs/smoke/vvah-3.log
+vvah	2	/Users/ibrahim/Developer/ai-security-harness-lab/environments/vvah/bin/vvaharness estimate --repo /Users/ibrahim/Developer/ai-security-harness-lab/fixtures/sample-vulnerable-app	2026-10-14T03:20:25Z	1	0	logs/smoke/vvah-4.log
+vulnhuntr	1	/Users/ibrahim/Developer/ai-security-harness-lab/environments/vulnhuntr/bin/vulnhuntr --help	2026-10-14T03:20:26Z	1	0	logs/smoke/vulnhuntr-1.log
+strix	1	strix --help	2026-10-14T03:20:28Z	0	0	logs/smoke/strix-1.log
+strix	1	strix --version	2026-10-14T03:20:28Z	0	0	logs/smoke/strix-2.log
+pentestgpt	1	/Users/ibrahim/Developer/ai-security-harness-lab/repos/PentestGPT/.venv/bin/pentestgpt-legacy --help	2026-10-14T03:20:28Z	1	0	logs/smoke/pentestgpt-1.log
+pentestgpt	2	cd /Users/ibrahim/Developer/ai-security-harness-lab/repos/PentestGPT && .venv/bin/python -m pytest tests -q -p no:cacheprovider -m 'not live and not docker' --ignore=tests/docker	2026-10-14T03:20:28Z	1	0	logs/smoke/pentestgpt-2.log
+pentestgpt	2	cd /Users/ibrahim/Developer/ai-security-harness-lab/repos/PentestGPT/pentestgpt_agent && .venv/bin/python -m pytest -q -p no:cacheprovider -m 'not live' --ignore=tests/live --ignore=tests/test_local_target.py --ignore=tests/test_local_benchmark.py	2026-10-14T03:20:30Z	1	0	logs/smoke/pentestgpt-3.log
+swe-agent	1	/Users/ibrahim/Developer/ai-security-harness-lab/environments/swe-agent/bin/sweagent --help	2026-10-14T03:20:30Z	0	0	logs/smoke/swe-agent-1.log
+inspect_ai	1	/Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/bin/inspect --version	2026-10-14T03:20:30Z	1	0	logs/smoke/inspect_ai-1.log
+inspect_ai	1	/Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/bin/inspect --help	2026-10-14T03:20:31Z	0	0	logs/smoke/inspect_ai-2.log
+inspect_ai	2	/Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/bin/inspect eval configs/inspect_mock_task.py --model mockllm/model --log-dir /Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/inspect --no-ansi	2026-10-14T03:20:32Z	2	0	logs/smoke/inspect_ai-3.log
+promptfoo	1	promptfoo --version	2026-10-14T03:20:34Z	1	0	logs/smoke/promptfoo-1.log
+promptfoo	1	promptfoo --help	2026-10-14T03:20:35Z	1	0	logs/smoke/promptfoo-2.log
+promptfoo	2	promptfoo eval -c configs/promptfoo-echo.yaml --no-cache --no-progress-bar -o /Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/promptfoo-echo.json	2026-10-14T03:20:35Z	0	0	logs/smoke/promptfoo-3.log
+garak	1	/Users/ibrahim/Developer/ai-security-harness-lab/environments/garak/bin/garak --version	2026-10-14T03:20:36Z	1	0	logs/smoke/garak-1.log
+garak	1	/Users/ibrahim/Developer/ai-security-harness-lab/environments/garak/bin/garak --help	2026-10-14T03:20:36Z	0	0	logs/smoke/garak-2.log
+garak	2	/Users/ibrahim/Developer/ai-security-harness-lab/environments/garak/bin/garak --target_type test.Blank --probes test.Test --report_prefix lab-smoke	2026-10-14T03:20:36Z	0	0	logs/smoke/garak-3.log
+pyrit	1	/Users/ibrahim/Developer/ai-security-harness-lab/environments/pyrit/bin/python -c 'import pyrit; print(pyrit.__version__)'	2026-10-14T03:20:36Z	0	0	logs/smoke/pyrit-1.log
+pyrit	1	/Users/ibrahim/Developer/ai-security-harness-lab/environments/pyrit/bin/pyrit_scan --help	2026-10-14T03:20:36Z	0	0	logs/smoke/pyrit-2.log
+pyrit	2	/Users/ibrahim/Developer/ai-security-harness-lab/environments/pyrit/bin/python -c 'import asyncio; from pyrit.prompt_converter import Base64Converter as B; r=asyncio.run(B().convert_async(prompt="lab")); assert r.output_text=="bGFi", r; print("converter OK", r.output_text)'	2026-10-14T03:20:37Z	0	1	logs/smoke/pyrit-3.log
+openhands	1	/Users/ibrahim/Developer/ai-security-harness-lab/environments/openhands/node_modules/.bin/agent-canvas --help	2026-10-14T03:20:37Z	0	0	logs/smoke/openhands-1.log
+aider	1	aider --version	2026-10-14T03:20:37Z	2	0	logs/smoke/aider-1.log
+aider	1	aider --help	2026-10-14T03:20:39Z	1	0	logs/smoke/aider-2.log
+semgrep	1	semgrep --version	2026-10-14T03:20:39Z	0	0	logs/smoke/semgrep-1.log
+semgrep	2	semgrep scan --metrics off --disable-version-check --config configs/lab-rules.yml --json -o /Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/semgrep.json --sarif-output=/Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/semgrep.sarif /Users/ibrahim/Developer/ai-security-harness-lab/fixtures/sample-vulnerable-app	2026-10-14T03:20:40Z	1	0	logs/smoke/semgrep-2.log
+opengrep	1	opengrep --version	2026-10-14T03:20:41Z	1	0	logs/smoke/opengrep-1.log
+opengrep	2	opengrep scan --config configs/lab-rules.yml --json -o /Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/opengrep.json --sarif-output=/Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/opengrep.sarif /Users/ibrahim/Developer/ai-security-harness-lab/fixtures/sample-vulnerable-app	2026-10-14T03:20:42Z	1	0	logs/smoke/opengrep-2.log
+langgraph	2	/Users/ibrahim/Developer/ai-security-harness-lab/environments/langgraph/bin/python configs/langgraph_offline.py	2026-10-14T03:20:43Z	1	0	logs/smoke/langgraph-1.log
+autogen	2	/Users/ibrahim/Developer/ai-security-harness-lab/environments/autogen/bin/python configs/autogen_offline.py	2026-10-14T03:20:43Z	0	0	logs/smoke/autogen-1.log
+crewai	1	/Users/ibrahim/Developer/ai-security-harness-lab/environments/crewai/bin/crewai version	2026-10-14T03:20:44Z	0	0	logs/smoke/crewai-1.log
+crewai	2	/Users/ibrahim/Developer/ai-security-harness-lab/environments/crewai/bin/python configs/crewai_offline.py	2026-10-14T03:20:44Z	2	0	logs/smoke/crewai-2.log
+pentagi	2	cd /Users/ibrahim/Developer/ai-security-harness-lab/repos/pentagi && docker compose --env-file .env.example -f docker-compose.yml config --quiet	2026-10-14T03:20:45Z	0	0	logs/smoke/pentagi-1.log
+shannon	2	cd /Users/ibrahim/Developer/ai-security-harness-lab/repos/shannon && docker compose -f docker-compose.yml config --quiet	2026-10-14T03:20:45Z	0	0	logs/smoke/shannon-1.log
+pyrit	2	/Users/ibrahim/Developer/ai-security-harness-lab/environments/pyrit/bin/python -c 'import asyncio; from pyrit.converter import Base64Converter as B; r=asyncio.run(B().convert_async(prompt="lab")); assert r.output_text=="bGFi", r; print("converter OK", r.output_text)'	2026-10-14T03:21:02Z	0	0	logs/smoke/pyrit-4.log
+inspect_ai	2	/Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/bin/inspect eval configs/inspect_mock_task.py --model mockllm/model --log-dir /Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/inspect --no-ansi	2026-10-14T03:21:45Z	1	0	logs/smoke/inspect_ai-4.log
+promptfoo	3	promptfoo eval -c configs/promptfoo-ollama.yaml --no-cache --no-progress-bar -o $A/out/promptfoo-ollama.json	2026-10-14T05:48:51Z	6	1	logs/smoke/promptfoo-4.log
+garak	3	$E/garak/bin/garak --config configs/garak-ollama.yaml --target_type ollama --target_name llama3.1:8b --probes promptinject.HijackHateHumans,encoding.InjectBase64 --report_prefix lab-ollama	2026-10-14T05:48:57Z	0	127	logs/smoke/garak-4.log
+promptfoo	3	promptfoo eval -c configs/promptfoo-ollama.yaml --no-cache --no-progress-bar -o /Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/promptfoo-ollama.json	2026-10-14T05:49:13Z	3	0	logs/smoke/promptfoo-5.log
+garak	3	/Users/ibrahim/Developer/ai-security-harness-lab/environments/garak/bin/garak --config configs/garak-ollama.yaml --target_type ollama --target_name llama3.1:8b --probes promptinject.HijackHateHumans,encoding.InjectBase64 --report_prefix lab-ollama	2026-10-14T05:49:17Z	44	0	logs/smoke/garak-5.log

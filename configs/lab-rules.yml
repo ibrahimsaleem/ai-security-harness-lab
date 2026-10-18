@@ -1,0 +1,58 @@
+rules:
+  - id: lab-sqli-string-format
+    languages: [python]
+    severity: ERROR
+    message: SQL query built with string formatting
+    pattern-either:
+      - pattern: $C.execute("..." % $X)
+      - pattern: $C.execute(f"...")
+      - pattern: |
+          $Q = "..." % $X
+          ...
+          $C.execute($Q)
+  - id: lab-hardcoded-secret
+    languages: [python]
+    severity: WARNING
+    message: Hardcoded credential
+    patterns:
+      - pattern: $NAME = "..."
+      - metavariable-regex: {metavariable: $NAME, regex: (?i).*(password|secret|access_key).*}
+  - id: lab-pickle-loads
+    languages: [python]
+    severity: ERROR
+    message: Untrusted pickle deserialization
+    pattern: pickle.loads(...)
+  - id: lab-yaml-unsafe-load
+    languages: [python]
+    severity: ERROR
+    message: yaml.load with unsafe Loader
+    pattern: yaml.load(..., Loader=yaml.Loader)
+  - id: lab-mktemp
+    languages: [python]
+    severity: WARNING
+    message: Insecure tempfile.mktemp
+    pattern: tempfile.mktemp(...)
+  - id: lab-shell-true
+    languages: [python]
+    severity: ERROR
+    message: subprocess with shell=True and concatenated input
+    pattern: subprocess.$F("..." + $X, ..., shell=True, ...)
+  - id: lab-eval
+    languages: [python]
+    severity: ERROR
+    message: eval of dynamic input
+    pattern: eval(...)
+  - id: lab-path-join-request
+    languages: [python]
+    severity: WARNING
+    message: Path built from request input
+    pattern: open(os.path.join(..., $N))
+  - id: lab-flask-route-no-auth
+    languages: [python]
+    severity: INFO
+    message: Admin route without auth decorator
+    patterns:
+      - pattern: |
+          @$APP.route("$PATH", ...)
+          def $F(...): ...
+      - metavariable-regex: {metavariable: $PATH, regex: .*admin.*}

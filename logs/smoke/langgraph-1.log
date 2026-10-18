@@ -1,0 +1,2 @@
+$ /Users/ibrahim/Developer/ai-security-harness-lab/environments/langgraph/bin/python configs/langgraph_offline.py
+langgraph offline OK: {'findings': ['lab-sqli-string-format', 'APPROVED'], 'approved': True}

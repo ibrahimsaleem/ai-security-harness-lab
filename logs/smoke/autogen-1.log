@@ -1,0 +1,2 @@
+$ /Users/ibrahim/Developer/ai-security-harness-lab/environments/autogen/bin/python configs/autogen_offline.py
+autogen offline OK: Finding confirmed: SQLi in db.py

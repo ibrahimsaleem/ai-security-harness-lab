@@ -1,0 +1,2 @@
+$ /Users/ibrahim/Developer/ai-security-harness-lab/environments/pyrit/bin/python -c 'import pyrit; print(pyrit.__version__)'
+1.2.0.dev0

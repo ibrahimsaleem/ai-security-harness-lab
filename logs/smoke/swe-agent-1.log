@@ -1,0 +1,36 @@
+$ /Users/ibrahim/Developer/ai-security-harness-lab/environments/swe-agent/bin/sweagent --help
+👋 INFO     This is SWE-agent version 1.1.0                                     
+            (hash='3ea751c087f32b16e039a2233dd6eefecef325d5') with SWE-ReX      
+            version 1.4.0 (rex_hash='unavailable').                             
+Main command line interface for SWE-agent.
+
+=== USAGE ===
+
+sweagent <command> 
+
+Display usage instructions for a specific command:
+
+sweagent <command> --help
+
+=== SUBCOMMANDS TO RUN SWE-AGENT ===
+
+run or r: Run swe-agent on a single problem statement, for example a github 
+issue.
+run-batch or b: Run swe-agent on a batch of problem statements, e.g., on 
+SWE-Bench.
+
+=== MISC SUBCOMMANDS ===
+
+merge-preds: Merge multiple prediction files into a single file. In most cases
+    run-batch will already do this, but you can use this to merge predictions
+    from multiple directories.
+inspect or i: Open a single trajectory file in a terminal-based viewer.
+inspector or I: Open trajectories in a web-based viewer.
+run-replay: Replay a trajectory file or a demo file.
+    This can be useful to fill in environment output when creating 
+demonstrations.
+traj-to-demo: Convert a trajectory file to an easy to edit demo file.
+run-api: Run swe-agent as a backend for a GUI
+remove-unfinished or ru: Remove unfinished trajectories
+quick-stats or qs: Calculate quick stats from a directory of trajectories
+

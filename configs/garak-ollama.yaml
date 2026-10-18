@@ -1,0 +1,4 @@
+# Bounded local run: <=20 prompts per probe, 1 generation each, string-match detectors only (no HF model downloads).
+run:
+  generations: 1
+  soft_probe_prompt_cap: 20

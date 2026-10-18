@@ -1,0 +1,256 @@
+$ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/bin/inspect eval configs/inspect_mock_task.py --model mockllm/model --log-dir /Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/inspect --no-ansi
+[10/13/26 22:20:33] WARNING  Control server failed to start (eval server.py:1862
+                             will run without control surface):                 
+                             AF_UNIX path too long                              
+╭──────────────────────────────────────────────────────────────────────────────╮
+│lab_smoke (1 sample): mockllm/model                                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in task_run                                                                  │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in run                                                                       │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in _run_coro                                                                 │
+│                                                                              │
+│   324 │   │                                                                  │
+│   325 │   │   with self._cancel_scope:                                       │
+│   326 │   │   │   try:                                                       │
+│ ❱ 327 │   │   │   │   retval = await self._coro                              │
+│   328 │   │   │   except BaseException as exc:                               │
+│   329 │   │   │   │   self._exception = exc                                  │
+│   330 │   │   │   │   raise                                                  │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in run_one                                                                   │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in run_sample                                                                │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in task_run_sample                                                           │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in _task_run_sample_attempt                                                  │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in _task_run_sample_attempt                                                  │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in _run_coro                                                                 │
+│                                                                              │
+│   324 │   │                                                                  │
+│   325 │   │   with self._cancel_scope:                                       │
+│   326 │   │   │   try:                                                       │
+│ ❱ 327 │   │   │   │   retval = await self._coro                              │
+│   328 │   │   │   except BaseException as exc:                               │
+│   329 │   │   │   │   self._exception = exc                                  │
+│   330 │   │   │   │   raise                                                  │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in run                                                                       │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in __call__                                                                  │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in solve                                                                     │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in generate                                                                  │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in task_generate                                                             │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in generate                                                                  │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in _generate                                                                 │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in async_wrapped                                                             │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in __call__                                                                  │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in iter                                                                      │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in inner                                                                     │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in <lambda>                                                                  │
+│                                                                              │
+│ /Users/ibrahim/.pyenv/versions/3.12.14/lib/python3.12/concurrent/futures/_b… │
+│ in result                                                                    │
+│                                                                              │
+│   446 │   │   │   │   if self._state in [CANCELLED, CANCELLED_AND_NOTIFIED]: │
+│   447 │   │   │   │   │   raise CancelledError()                             │
+│   448 │   │   │   │   elif self._state == FINISHED:                          │
+│ ❱ 449 │   │   │   │   │   return self.__get_result()                         │
+│   450 │   │   │   │                                                          │
+│   451 │   │   │   │   self._condition.wait(timeout)                          │
+│   452                                                                        │
+│                                                                              │
+│ /Users/ibrahim/.pyenv/versions/3.12.14/lib/python3.12/concurrent/futures/_b… │
+│ in __get_result                                                              │
+│                                                                              │
+│   398 │   def __get_result(self):                                            │
+│   399 │   │   if self._exception:                                            │
+│   400 │   │   │   try:                                                       │
+│ ❱ 401 │   │   │   │   raise self._exception                                  │
+│   402 │   │   │   finally:                                                   │
+│   403 │   │   │   │   # Break a reference cycle with the exception in self._ │
+│   404 │   │   │   │   self = None                                            │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in __call__                                                                  │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in generate                                                                  │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in generate                                                                  │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in _ensure_default_usage                                                     │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in count_tokens                                                              │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in count_tokens                                                              │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in count_text_tokens                                                         │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/repos/inspect_ai/src/inspe… │
+│ in count_text_tokens                                                         │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in get_encoding                                                              │
+│                                                                              │
+│   83 │   │   │   )                                                           │
+│   84 │   │                                                                   │
+│   85 │   │   constructor = ENCODING_CONSTRUCTORS[encoding_name]              │
+│ ❱ 86 │   │   enc = Encoding(**constructor())                                 │
+│   87 │   │   ENCODINGS[encoding_name] = enc                                  │
+│   88 │   │   return enc                                                      │
+│   89                                                                         │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in o200k_base                                                                │
+│                                                                              │
+│    93                                                                        │
+│    94                                                                        │
+│    95 def o200k_base():                                                      │
+│ ❱  96 │   mergeable_ranks = load_tiktoken_bpe(                               │
+│    97 │   │   "https://openaipublic.blob.core.windows.net/encodings/o200k_ba │
+│    98 │   │   expected_hash="446a9538cb6c348e3516120d7c08b09f57c36495e2acfff │
+│    99 │   )                                                                  │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in load_tiktoken_bpe                                                         │
+│                                                                              │
+│   158                                                                        │
+│   159 def load_tiktoken_bpe(tiktoken_bpe_file: str, expected_hash: str | Non │
+│   160 │   # NB: do not add caching to this function                          │
+│ ❱ 161 │   contents = read_file_cached(tiktoken_bpe_file, expected_hash)      │
+│   162 │   ret = {}                                                           │
+│   163 │   for line in contents.splitlines():                                 │
+│   164 │   │   if not line:                                                   │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in read_file_cached                                                          │
+│                                                                              │
+│    63 │   │   except OSError:                                                │
+│    64 │   │   │   pass                                                       │
+│    65 │                                                                      │
+│ ❱  66 │   contents = read_file(blobpath)                                     │
+│    67 │   if expected_hash and not check_hash(contents, expected_hash):      │
+│    68 │   │   raise ValueError(                                              │
+│    69 │   │   │   f"Hash mismatch for data downloaded from {blobpath} (expec │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in read_file                                                                 │
+│                                                                              │
+│    14 │   │   # avoiding blobfile for public files helps avoid auth issues,  │
+│    15 │   │   import requests                                                │
+│    16 │   │                                                                  │
+│ ❱  17 │   │   resp = requests.get(blobpath)                                  │
+│    18 │   │   resp.raise_for_status()                                        │
+│    19 │   │   return resp.content                                            │
+│    20                                                                        │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in get                                                                       │
+│                                                                              │
+│    84 │   :rtype: requests.Response                                          │
+│    85 │   """                                                                │
+│    86 │                                                                      │
+│ ❱  87 │   return request("get", url, params=params, **kwargs)                │
+│    88                                                                        │
+│    89                                                                        │
+│    90 def options(url: _t.UriType, **kwargs: Unpack[_t.RequestKwargs]) -> Re │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in request                                                                   │
+│                                                                              │
+│    68 │   # avoid leaving sockets open which can trigger a ResourceWarning i │
+│    69 │   # cases, and look like a memory leak in others.                    │
+│    70 │   with sessions.Session() as session:                                │
+│ ❱  71 │   │   return session.request(method=method, url=url, **kwargs)       │
+│    72                                                                        │
+│    73                                                                        │
+│    74 def get(                                                               │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in request                                                                   │
+│                                                                              │
+│   648 │   │   │   "allow_redirects": allow_redirects,                        │
+│   649 │   │   }                                                              │
+│   650 │   │   send_kwargs.update(settings)                                   │
+│ ❱ 651 │   │   resp = self.send(prep, **send_kwargs)                          │
+│   652 │   │                                                                  │
+│   653 │   │   return resp                                                    │
+│   654                                                                        │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in send                                                                      │
+│                                                                              │
+│   781 │   │   start = preferred_clock()                                      │
+│   782 │   │                                                                  │
+│   783 │   │   # Send the request                                             │
+│ ❱ 784 │   │   r = adapter.send(request, **kwargs)                            │
+│   785 │   │                                                                  │
+│   786 │   │   # Total elapsed time of the request (approximately)            │
+│   787 │   │   elapsed = preferred_clock() - start                            │
+│                                                                              │
+│ /Users/ibrahim/Developer/ai-security-harness-lab/environments/inspect_ai/li… │
+│ in send                                                                      │
+│                                                                              │
+│   726 │   │   │   │   # This branch is for urllib3 v1.22 and later.          │
+│   727 │   │   │   │   raise SSLError(e, request=request)                     │
+│   728 │   │   │                                                              │
+│ ❱ 729 │   │   │   raise ConnectionError(e, request=request)                  │
+│   730 │   │                                                                  │
+│   731 │   │   except ClosedPoolError as e:                                   │
+│   732 │   │   │   raise ConnectionError(e, request=request)                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ConnectionError: HTTPSConnectionPool(host='openaipublic.blob.core.windows.net', 
+port=443): Max retries exceeded with url: /encodings/o200k_base.tiktoken (Caused
+by                                                                              
+NewConnectionError("HTTPSConnection(host='openaipublic.blob.core.windows.net',  
+port=443): Failed to establish a new connection: [Errno 1] Operation not        
+permitted"))                                                                    
+                                                                                
+Task interrupted (no samples completed before interruption)                     
+                                                                                
+Log:                                                                            
+artifacts/out/inspect/2026-10-14T03-20-33-00-00_lab-smoke_neSxeV3w2jRevZwt5QChKo
+.eval                                                                           
+                                                                                

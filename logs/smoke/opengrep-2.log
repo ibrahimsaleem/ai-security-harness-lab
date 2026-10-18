@@ -1,0 +1,17 @@
+$ opengrep scan --config configs/lab-rules.yml --json -o /Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/opengrep.json --sarif-output=/Users/ibrahim/Developer/ai-security-harness-lab/artifacts/out/opengrep.sarif /Users/ibrahim/Developer/ai-security-harness-lab/fixtures/sample-vulnerable-app
+               
+               
+┌─────────────┐
+│ Scan Status │
+└─────────────┘
+  Scanning 7 files tracked by git with 9 Code rules:
+  Scanning 6 files with 9 python rules.
+                
+                
+┌──────────────┐
+│ Scan Summary │
+└──────────────┘
+Some files were skipped or only partially analyzed.
+  Scan was limited to files tracked by git.
+
+Ran 9 rules on 6 files: 12 findings.
